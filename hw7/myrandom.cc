@@ -7,7 +7,11 @@
  * Class 'MyRandom' for random number generation.
  *
  * Author: Duncan A. Buell
- * Date last modified: 23 May 2016
+ * Date last modified: 27 November 2016
+ * Edited by Robert Carff
+ *
+ *
+ *
 **/
 
 /******************************************************************************
