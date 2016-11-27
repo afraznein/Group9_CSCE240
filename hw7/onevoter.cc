@@ -5,6 +5,11 @@
 * Author/copyright:  Duncan Buell. All rights reserved.
 * Date: 6 October 2016
 *
+* Edited by Robert Carff 11/27/2016
+* - added correct formating
+* Edited by Robert Carff 11/27/2016
+* - added correct commenting
+*
 **/
 
 static const string kTag = "ONEVOTER: ";
@@ -96,6 +101,7 @@ string OneVoter::GetTOD(int time_in_seconds) const {
 **/
 string OneVoter::ConvertTime(int time_in_seconds) const {
 
+  //could possibly put these into header file
   int hours = 0;
   int minutes = 0;
   int seconds = 0;
@@ -104,30 +110,29 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
   hours = time_in_seconds / 3600;
   minutes = (time_in_seconds - 3600*hours) / 60;
   seconds = (time_in_seconds - 3600*hours - 60*minutes);
-  
   s += Utils::Format(time_in_seconds, 6);
-  
+  //Formating the hours
   if(hours < 0)
-  s += " 00";
+    s += " 00";
   else if(hours < 10)
-  s += " 0" + Utils::Format(hours, 1);
+    s += " 0" + Utils::Format(hours, 1);
   else
-  s += " " + Utils::Format(hours, 2);
-  
+    s += " " + Utils::Format(hours, 2);
+  //Formatting minutes
   if(minutes < 0)
-  s += ":00";
+    s += ":00";
   else if(minutes < 10)
-  s += ":0" + Utils::Format(minutes, 1);
+    s += ":0" + Utils::Format(minutes, 1);
   else
-  s += ":" + Utils::Format(minutes, 2);
-  
+    s += ":" + Utils::Format(minutes, 2);
+  //Formating the Seconds
   if(seconds < 0)
-  s += ":00";
+    s += ":00";
   else if(seconds < 10)
-  s += ":0" + Utils::Format(seconds, 1);
+    s += ":0" + Utils::Format(seconds, 1);
   else
-  s += ":" + Utils::Format(seconds, 2);
-  
+    s += ":" + Utils::Format(seconds, 2);
+  //returns the apended data in form of string "s"
   return s;
 } // string OneVoter::ConvertTime(int time_in_seconds) const
 
