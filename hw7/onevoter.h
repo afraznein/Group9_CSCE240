@@ -2,8 +2,11 @@
  * Header for the 'OneVoter' class
  *
  * Author/copyright:  Duncan Buell
- * Date: 6 October 2016
+ * Date: November 27, 2016
+ * Edited by Robert Carff
  *
+ * This header file for the onevoter.cc 
+ * 
 **/
 
 #ifndef ONEVOTER_H
@@ -58,4 +61,4 @@ private:
  string GetTOD(int time) const;
 };
 
-#endif // ONEVOTER_H
+#endif // ONEVOTER_H=
