@@ -25,6 +25,9 @@
  * Anthony Frazier on 11/29/16
  *-Minor formatting and grammar changes.
  *
+ * Carson Kaylor on 11/30/16
+ * -Added additional comments
+ *
 **/
 
 static const string kTag = "CONFIG: ";
@@ -84,12 +87,16 @@ void Configuration::ReadConfiguration(Scanner& instream) {
   wait_time_minutes_that_is_too_long_ = scanline.NextInt();
   number_of_iterations_ = scanline.NextInt();
   
+  //starts reading second line
   line = instream.NextLine();
   scanline.OpenString(line);
+  //arrival_zero is the percent of voters at time 0
   arrival_zero_ = scanline.NextDouble();
   
   for (int sub = 0; sub < election_day_length_hours_; ++sub) {
     //doubles are taken from the input and pushed into a vector
+    //these double value are the percent of voters that came
+    //during each hour
     double input = scanline.NextDouble();
     arrival_fractions_.push_back(input);
   }
@@ -100,6 +107,7 @@ void Configuration::ReadConfiguration(Scanner& instream) {
   
   while (service_times_file.HasNext()) {
     //fill in a vector with this data 
+    //this data is the service time
     int thetime = service_times_file.NextInt();
     actual_service_times_.push_back(thetime);
   }
